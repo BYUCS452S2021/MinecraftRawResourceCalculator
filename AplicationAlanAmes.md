@@ -6,7 +6,7 @@ long live the chickens!
 
 ## Bolts
 - Business
-   - I agree. i also think that at some point it should be hooked up to a mod so that you can see it lists in game.
+   - I agree. I also think that at some point it should be hooked up to a mod so that you can see the lists in game.
 - Operation
    - If this gets to be to much to handle for the founders, we should sell it to someone else.
 - Legal
