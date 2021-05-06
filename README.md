@@ -8,6 +8,7 @@ All items and blocks from vanilla Minecraft will be available by default, and we
 
 ## **Team**
 We already have a team of two, but we may be open to having one additional person join us. Fair warning, though: we are looking to finish this project by the beginning of June, so we will be working at a slightly faster pace than the rest of the class.
+Update: After some more in-depth discussion of the project, we have decided that the scope we will be implementing for this class will not provide enough work for three or more participants, so we will not be expanding our team beyond the two founders at this time.
 
 ## **Implementation**
 We plan to implement the MVP using a SQL database, then migrate to NoSQL.
