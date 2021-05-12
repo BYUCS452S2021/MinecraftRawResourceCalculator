@@ -1,4 +1,4 @@
-# Minecraft Raw Resource Calculator
+# Survival Resource Calculator (SRC)
 
 ## Quickly calculate the raw resources for that mega-build you’ve been planning!
 
