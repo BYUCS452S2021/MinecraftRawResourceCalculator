@@ -1,0 +1,26 @@
+.inventory {
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+}
+
+.inventory-slot {
+    display: grid;
+    grid-template-columns: 4px 64px 4px;
+    grid-template-rows: 4px 64px 4px;
+}
+
+.highlight {
+    background: #ffffff;
+}
+
+.lowlight {
+    background: #373737;
+}
+
+.fill {
+    background: #8b8b8b;
+}
+
+.temp {
+    background: green;
+}
