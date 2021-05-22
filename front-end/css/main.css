@@ -1,19 +1,12 @@
-.inventory {
-    display: grid;
-    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
-}
-
-.inventory-slot {
-    display: grid;
-    grid-template-columns: 4px 64px 4px;
-    grid-template-rows: 4px 64px 4px;
+.temp {
+    background: red;
 }
 
 .highlight {
     background: #ffffff;
 }
 
-.lowlight {
+.shadow {
     background: #373737;
 }
 
@@ -21,6 +14,81 @@
     background: #8b8b8b;
 }
 
-.temp {
-    background: green;
+.black {
+    background: black;
+}
+
+.transparent {
+    background: black;
+    opacity: 0;
+}
+
+.inventory {
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+}
+
+.inventory-slot {
+    display: grid;
+    grid-template-columns: 3px 48px 3px;
+    grid-template-rows: 3px 48px 3px;
+}
+
+.inventory-space {
+    width: 54px;
+    height: 54px;
+    background: #8b8b8b;
+}
+
+.border {
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+}
+
+.border-top-left {
+    display: grid;
+    grid-template-columns: 3px 3px 3px 3px 9px;
+    grid-template-rows: 3px 3px 3px 3px 9px;
+}
+
+.border-top {
+    display: grid;
+    grid-template-columns: auto;   
+    grid-template-rows: 3px 6px 12px;
+}
+
+.border-top-right {
+    display: grid;
+    grid-template-columns: 9px 3px 3px 3px 3px;
+    grid-template-rows: 3px 3px 3px 3px 9px;
+}
+
+.border-left {
+    display: grid;
+    grid-template-columns: 3px 6px 12px;   
+    grid-template-rows: auto;
+}
+
+.border-right {
+    display: grid;
+    grid-template-columns: 12px 6px 3px;   
+    grid-template-rows: auto;
+}
+
+.border-bottom-left {
+    display: grid;
+    grid-template-columns: 3px 3px 3px 3px 9px;
+    grid-template-rows: 9px 3px 3px 3px 3px;
+}
+
+.border-bottom {
+    display: grid;
+    grid-template-columns: auto;   
+    grid-template-rows: 12px 6px 3px;
+}
+
+.border-bottom-right {
+    display: grid;
+    grid-template-columns: 9px 3px 3px 3px 3px;
+    grid-template-rows: 9px 3px 3px 3px 3px;
 }
