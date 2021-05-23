@@ -1,5 +1,5 @@
 .temp {
-    background: red;
+    background: lightblue;
 }
 
 .highlight {
@@ -11,7 +11,7 @@
 }
 
 .fill {
-    background: #8b8b8b;
+    background: #c4c4c4;
 }
 
 .black {
@@ -34,13 +34,41 @@
     grid-template-rows: 3px 48px 3px;
 }
 
-.inventory-space {
-    width: 54px;
-    height: 54px;
+.inventory-slot-fill {
     background: #8b8b8b;
 }
 
-.border {
+.inventory-space {
+    width: 54px;
+    height: 54px;
+    background: #c4c4c4;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: max-content 20px max-content;
+    grid-template-rows: max-content 20px max-content;    
+}
+
+.button-corner {
+    display: grid;
+    grid-template-columns: 3px 3px 3px;
+    grid-template-rows: 3px 3px 3px;
+}
+
+.button-horiztonal-border {
+    display: grid;
+    grid-template-columns: auto;   
+    grid-template-rows: 3px 3px 3px;
+}
+
+.button-vertical-border {
+    display: grid;
+    grid-template-columns: 3px 3px 3px;
+    grid-template-rows: auto;   
+}
+
+.window {
     display: grid;
     grid-template-columns: max-content max-content max-content;
 }

@@ -1,14 +1,17 @@
+//INVENTORY SLOT
 Vue.component('inventory-slot', {
   props: {},
   template: `
     <div class="inventory-slot">
 		<div class="shadow"></div>
 		<div class="shadow"></div>
-		<div class="fill"></div>
+		<div class="inventory-slot-fill"></div>
+
 		<div class="shadow"></div>
-		<div class="fill"></div>
+		<div class="inventory-slot-fill"></div>
 		<div class="highlight"></div>
-		<div class="fill"></div>
+
+		<div class="inventory-slot-fill"></div>
 		<div class="highlight"></div>
 		<div class="highlight"></div>
 	</div>
@@ -22,6 +25,130 @@ Vue.component('inventory-space', {
   `
 })
 
+
+//BUTTON
+Vue.component('button-top-left', {
+  props: {},
+  template: `
+    	<div class="button-corner">
+			<div class="transparent"></div>
+			<div class="transparent"></div>
+			<div class="black"></div>	
+
+			<div class="transparent"></div>
+			<div class="black"></div>
+			<div class="highlight"></div>	
+
+			<div class="black"></div>
+			<div class="highlight"></div>
+			<div class="fill"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-top', {
+  props: {},
+  template: `
+    	<div class="button-horiztonal-border">
+			<div class="black"></div>
+			<div class="highlight"></div>
+			<div class="fill"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-top-right', {
+  props: {},
+  template: `
+    	<div class="button-corner">
+			<div class="black"></div>
+			<div class="transparent"></div>
+			<div class="transparent"></div>	
+
+			<div class="highlight"></div>
+			<div class="black"></div>
+			<div class="transparent"></div>	
+
+			<div class="fill"></div>
+			<div class="shadow"></div>
+			<div class="black"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-left', {
+  props: {},
+  template: `
+    	<div class="button-vertical-border">
+			<div class="black"></div>
+			<div class="highlight"></div>
+			<div class="fill"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-right', {
+  props: {},
+  template: `
+    	<div class="button-vertical-border">
+			<div class="fill"></div>
+			<div class="shadow"></div>
+			<div class="black"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-bottom-left', {
+  props: {},
+  template: `
+    	<div class="button-corner">
+			<div class="black"></div>
+			<div class="highlight"></div>
+			<div class="fill"></div>	
+
+			<div class="transparent"></div>
+			<div class="black"></div>
+			<div class="shadow"></div>	
+
+			<div class="transparent"></div>
+			<div class="transparent"></div>
+			<div class="black"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-bottom', {
+  props: {},
+  template: `
+    	<div class="button-horizontal-border">
+			<div class="fill"></div>
+			<div class="shadow"></div>
+			<div class="black"></div>	
+		</div>
+  `
+})
+
+Vue.component('button-bottom-right', {
+  props: {},
+  template: `
+    	<div class="button-corner">
+			<div class="fill"></div>
+			<div class="shadow"></div>
+			<div class="black"></div>	
+
+			<div class="shadow"></div>
+			<div class="black"></div>
+			<div class="transparent"></div>	
+
+			<div class="black"></div>
+			<div class="transparent"></div>
+			<div class="transparent"></div>	
+		</div>
+  `
+})
+
+
+//WINDOW BORDER
 Vue.component('border-top-left', {
   props: {},
   template: `
@@ -213,6 +340,7 @@ Vue.component('border-bottom-right', {
     </div>
   `
 })
+
 
 var app = new Vue({
     el: '#app',
