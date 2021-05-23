@@ -4,6 +4,10 @@
 
 # General Information
 
+## Server Port
+
+The Server will be run on `localhost` port 8080 during development. If that changes for the production release, change the port in the request URLs to match the actual port being used.
+
 ## Request Parameters
 
 HTTP requests can utilize two types of parameters: route and query.<br><br>
@@ -63,7 +67,7 @@ Retrieve basic information for all saved projects.
 
 ### Usage
 
-Make a `GET` request to `http://localhost/projectlist`.
+Make a `GET` request to `http://localhost:8080/projectlist`.
 
 ### Parameters/Request Body
 
@@ -89,7 +93,7 @@ Create a new project.
 
 ### Usage
 
-Make a `POST` request to `http://localhost/createproject`.
+Make a `POST` request to `http://localhost:8080/createproject`.
 
 ### Parameters/Request body
 
@@ -123,7 +127,7 @@ Retrieve the component list for the project identified by `:project`.
 
 ### Usage
 
-Make a `GET` request to `http://localhost/project/:project`
+Make a `GET` request to `http://localhost:8080/project/:project`
 
 ### Parameters/Request Body
 
@@ -151,7 +155,7 @@ Calculate the raw resources required to obtain all components of the project ide
 
 ### Usage
 
-Make a `GET` request to `http://localhost/project/:project/calculateresources`
+Make a `GET` request to `http://localhost:8080/project/:project/calculateresources`
 
 ### Parameters/Request Body
 
