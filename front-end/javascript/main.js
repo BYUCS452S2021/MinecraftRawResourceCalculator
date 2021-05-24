@@ -87,6 +87,15 @@ Vue.component('button-left', {
   `
 })
 
+Vue.component('button-text', {
+	props: {},
+	template: `
+		<div class="button-text">
+			Hello World.
+		</div>
+	`
+})
+
 Vue.component('button-right', {
   props: {},
   template: `
@@ -342,6 +351,7 @@ Vue.component('border-bottom-right', {
 })
 
 
+//APP
 var app = new Vue({
     el: '#app',
     data: {

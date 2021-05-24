@@ -1,5 +1,24 @@
-.temp {
-    background: lightblue;
+#app {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    height: 100vh;
+}
+
+body, html {
+  margin: 0;
+}
+
+.bg-image {
+    /* The image used */
+    background-image: url("../assets/images/background.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .highlight {
@@ -46,8 +65,8 @@
 
 .button {
     display: grid;
-    grid-template-columns: max-content 20px max-content;
-    grid-template-rows: max-content 20px max-content;    
+    grid-template-columns: max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content;    
 }
 
 .button-corner {
@@ -66,6 +85,10 @@
     display: grid;
     grid-template-columns: 3px 3px 3px;
     grid-template-rows: auto;   
+}
+
+.button-text {
+    font-family: minecrafter;
 }
 
 .window {
@@ -119,4 +142,26 @@
     display: grid;
     grid-template-columns: 9px 3px 3px 3px 3px;
     grid-template-rows: 9px 3px 3px 3px 3px;
+}
+
+@font-face {
+    font-family: minecraft;
+    src: url("../assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf");
+}
+
+@font-face {
+    font-family: minecraft;
+    src: url("../assets/fonts/minecraft-font/MinecraftBold-nMK1.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: minecraft;
+    src: url("../assets/fonts/minecraft-font/MinecraftItalic-1y1e.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: minecrafter;
+    src: url("../assets/fonts/minecrafter/Minecrafter.Reg.ttf");
 }
