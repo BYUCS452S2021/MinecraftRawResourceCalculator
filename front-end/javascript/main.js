@@ -49,7 +49,7 @@ Vue.component('button-top-left', {
 Vue.component('button-top', {
   props: {},
   template: `
-    	<div class="button-horiztonal-border">
+    	<div class="button-horizontal-border">
 			<div class="black"></div>
 			<div class="highlight"></div>
 			<div class="fill"></div>	

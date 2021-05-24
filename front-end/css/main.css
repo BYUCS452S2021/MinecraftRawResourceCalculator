@@ -56,7 +56,7 @@
     grid-template-rows: 3px 3px 3px;
 }
 
-.button-horiztonal-border {
+.button-horizontal-border {
     display: grid;
     grid-template-columns: auto;   
     grid-template-rows: 3px 3px 3px;
