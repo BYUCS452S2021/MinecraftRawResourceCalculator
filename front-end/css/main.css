@@ -88,12 +88,20 @@ body, html {
 }
 
 .button-text {
-    font-family: minecrafter;
+    font-family: minecraft-styled;
+    background: #c4c4c4;
+    padding: 10px;
 }
 
 .window {
     display: grid;
     grid-template-columns: max-content max-content max-content;
+    float: left;
+}
+
+.window-container {
+    display: flex;
+    justify-content: center;
 }
 
 .border-top-left {
@@ -145,23 +153,23 @@ body, html {
 }
 
 @font-face {
-    font-family: minecraft;
+    font-family: minecraft-regular;
     src: url("../assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf");
 }
 
 @font-face {
-    font-family: minecraft;
+    font-family: minecraft-regular;
     src: url("../assets/fonts/minecraft-font/MinecraftBold-nMK1.otf");
     font-weight: bold;
 }
 
 @font-face {
-    font-family: minecraft;
+    font-family: minecraft-regular;
     src: url("../assets/fonts/minecraft-font/MinecraftItalic-1y1e.otf");
     font-style: italic;
 }
 
 @font-face {
-    font-family: minecrafter;
+    font-family: minecraft-styled;
     src: url("../assets/fonts/minecrafter/Minecrafter.Reg.ttf");
 }
