@@ -1,7 +1,17 @@
+:root {
+    --scale: 1;
+}
+
 #app {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     height: 100vh;
+}
+
+#new-project-button {
+}
+
+#edit-button {
 }
 
 body, html {
@@ -21,16 +31,32 @@ body, html {
     background-size: cover;
 }
 
-.highlight {
+.highlight-gray {
     background: #ffffff;
 }
 
-.shadow {
+.highlight-green {
+    background: #ADFBB5;
+}
+
+.shadow-gray {
     background: #373737;
 }
 
-.fill {
+.shadow-green {
+    background: #34943E;
+}
+
+.fill-gray {
     background: #c4c4c4;
+}
+
+.fill-green {
+    background: #57E365;
+}
+
+.inventory-slot-fill {
+    background: #8b8b8b;
 }
 
 .black {
@@ -49,54 +75,123 @@ body, html {
 
 .inventory-slot {
     display: grid;
-    grid-template-columns: 3px 48px 3px;
-    grid-template-rows: 3px 48px 3px;
-}
-
-.inventory-slot-fill {
-    background: #8b8b8b;
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 48px) calc(var(--scale) * 3px);
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 48px) calc(var(--scale) * 3px);
 }
 
 .inventory-space {
-    width: 54px;
-    height: 54px;
-    background: #c4c4c4;
+    width: calc(var(--scale) * 54px);
+    height: calc(var(--scale) * 54px);
 }
 
 .button {
     display: grid;
     grid-template-columns: max-content max-content max-content;
-    grid-template-rows: max-content max-content max-content;    
+    grid-template-rows: max-content max-content max-content;
 }
 
 .button-corner {
     display: grid;
-    grid-template-columns: 3px 3px 3px;
-    grid-template-rows: 3px 3px 3px;
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
 }
 
 .button-horizontal-border {
     display: grid;
     grid-template-columns: auto;   
-    grid-template-rows: 3px 3px 3px;
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
 }
 
 .button-vertical-border {
     display: grid;
-    grid-template-columns: 3px 3px 3px;
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
     grid-template-rows: auto;   
 }
 
 .button-text {
     font-family: minecraft-styled;
-    background: #c4c4c4;
-    padding: 10px;
+    font-size: calc(var(--scale) * 30px);
+    padding: calc(var(--scale) * 15px);
+    margin: auto;
+}
+
+.button-space-vertical {
+    width: calc(var(--scale) * 3px);
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: calc(var(--scale) * 180px) calc(var(--scale) * 150px) calc(var(--scale) * 180px);
+}
+
+.project-info-name-header {
+    color: #8b8b8b;
+    font-family: minecraft-regular;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.project-info-name-body {
+    color: black;
+    font-family: minecraft-regular;
+    font-size: 25px;
+    padding-left: 5px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.project-info-author-header {
+    color: #8b8b8b;
+    font-family: minecraft-regular;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.project-info-author-body {
+    color: black;
+    font-family: minecraft-regular;
+    font-size: 25px;
+    padding-left: 5px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.project-info-date-header {
+    color: #8b8b8b;
+    font-family: minecraft-regular;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.project-info-date-body {
+    color: black;
+    font-family: minecraft-regular;
+    font-size: 25px;
+    padding-left: 5px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.project-info-space {
+    height: calc(var(--scale) * 3px);
+}
+
+.project-info-full-space {
+    height: calc(var(--scale) * 73px);
 }
 
 .window {
     display: grid;
     grid-template-columns: max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content;
     float: left;
+    padding: calc(var(--scale) * 10px);
 }
 
 .window-container {
@@ -106,50 +201,50 @@ body, html {
 
 .border-top-left {
     display: grid;
-    grid-template-columns: 3px 3px 3px 3px 9px;
-    grid-template-rows: 3px 3px 3px 3px 9px;
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 9px);
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 9px);
 }
 
 .border-top {
     display: grid;
     grid-template-columns: auto;   
-    grid-template-rows: 3px 6px 12px;
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 6px) calc(var(--scale) * 12px);
 }
 
 .border-top-right {
     display: grid;
-    grid-template-columns: 9px 3px 3px 3px 3px;
-    grid-template-rows: 3px 3px 3px 3px 9px;
+    grid-template-columns: calc(var(--scale) * 9px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
+    grid-template-rows: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 9px);
 }
 
 .border-left {
     display: grid;
-    grid-template-columns: 3px 6px 12px;   
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 6px) calc(var(--scale) * 12px);   
     grid-template-rows: auto;
 }
 
 .border-right {
     display: grid;
-    grid-template-columns: 12px 6px 3px;   
+    grid-template-columns: calc(var(--scale) * 12px) calc(var(--scale) * 6px) calc(var(--scale) * 3px);   
     grid-template-rows: auto;
 }
 
 .border-bottom-left {
     display: grid;
-    grid-template-columns: 3px 3px 3px 3px 9px;
-    grid-template-rows: 9px 3px 3px 3px 3px;
+    grid-template-columns: calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 9px);
+    grid-template-rows: calc(var(--scale) * 9px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
 }
 
 .border-bottom {
     display: grid;
     grid-template-columns: auto;   
-    grid-template-rows: 12px 6px 3px;
+    grid-template-rows: calc(var(--scale) * 12px) calc(var(--scale) * 6px) calc(var(--scale) * 3px);
 }
 
 .border-bottom-right {
     display: grid;
-    grid-template-columns: 9px 3px 3px 3px 3px;
-    grid-template-rows: 9px 3px 3px 3px 3px;
+    grid-template-columns: calc(var(--scale) * 9px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
+    grid-template-rows: calc(var(--scale) * 9px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
 }
 
 @font-face {

@@ -3,17 +3,17 @@ Vue.component('inventory-slot', {
   props: {},
   template: `
     <div class="inventory-slot">
-		<div class="shadow"></div>
-		<div class="shadow"></div>
+		<div class="shadow-gray"></div>
+		<div class="shadow-gray"></div>
 		<div class="inventory-slot-fill"></div>
 
-		<div class="shadow"></div>
+		<div class="shadow-gray"></div>
 		<div class="inventory-slot-fill"></div>
-		<div class="highlight"></div>
+		<div class="highlight-gray"></div>
 
 		<div class="inventory-slot-fill"></div>
-		<div class="highlight"></div>
-		<div class="highlight"></div>
+		<div class="highlight-gray"></div>
+		<div class="highlight-gray"></div>
 	</div>
   `
 })
@@ -26,9 +26,131 @@ Vue.component('inventory-space', {
 })
 
 
-//BUTTON
-Vue.component('button-top-left', {
+//PROJECT INFO
+Vue.component('project-info-button', {
+  props: {
+	  name: {
+		type: String,
+		required: true
+	  },
+	  author: {
+		type: String,
+		required: true
+	  },
+	  date: {
+		type: String,
+		required: true
+	  }
+  },
+  template: `
+    <div class="project-list">
+		<span class="button">
+			<button-top-left></button-top-left>
+			<button-top></button-top>
+			<button-top-right></button-top-right>
+			<button-left></button-left>
+			
+			<div class="project-info">
+				<div>
+					<div class="project-info-name-header">
+						Name:
+					</div>
+					<div class="project-info-name-body">
+						{{name}}
+					</div>
+				</div>
+				<div>
+					<div class="project-info-author-header">
+						Author:
+					</div>
+					<div class="project-info-author-body">
+						{{author}}
+					</div>
+				</div>
+				<div>
+					<div class="project-info-date-header">
+						Date:
+					</div>
+					<div class="project-info-date-body">
+						{{date}}
+					</div>
+				</div>
+
+			</div>
+									
+			<button-right></button-right>
+			<button-bottom-left></button-bottom-left>
+			<button-bottom></button-bottom>
+			<button-bottom-right></button-bottom-right>
+		</span>
+	</div>
+  `,
+  data() {
+	  return {
+	  }
+  }
+})
+
+Vue.component('project-info-space', {
   props: {},
+  template: `
+    <div class="project-info-space"></div>
+  `
+})
+
+Vue.component('project-info-full-space', {
+  props: {},
+  template: `
+    <div class="project-info-full-space"></div>
+  `
+})
+
+
+//BUTTON
+Vue.component('text-button', {
+  props: {
+	  text: {
+		type: String,
+	  },
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+  },
+  template: `
+    <div class="project-list">
+		<span class="button">
+			<button-top-left :color="color"></button-top-left>
+			<button-top :color="color"></button-top>
+			<button-top-right :color="color"></button-top-right>
+			<button-left :color="color"></button-left>
+			
+			<div :class="[buttonText, fillColor]">
+				{{text}}
+			</div>
+									
+			<button-right :color="color"></button-right>
+			<button-bottom-left :color="color"></button-bottom-left>
+			<button-bottom :color="color"></button-bottom>
+			<button-bottom-right :color="color"></button-bottom-right>
+		</span>
+	</div>
+  `,
+  data() {
+	  return {
+		  buttonText: "button-text",
+		  fillColor: `fill-${this.color}`
+	  }
+  }
+})
+
+Vue.component('button-top-left', {
+  props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+  },
   template: `
     	<div class="button-corner">
 			<div class="transparent"></div>
@@ -37,115 +159,190 @@ Vue.component('button-top-left', {
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div class="highlight"></div>	
+			<div :class="[highlightColor]"></div>	
 
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div :class="[highlightColor]"></div>
+			<div :class="[fillColor]"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-top', {
-  props: {},
+  props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+  },
   template: `
     	<div class="button-horizontal-border">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div :class="[highlightColor]"></div>
+			<div :class="[fillColor]"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-top-right', {
-  props: {},
-  template: `
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
+   template: `
     	<div class="button-corner">
 			<div class="black"></div>
 			<div class="transparent"></div>
 			<div class="transparent"></div>	
 
-			<div class="highlight"></div>
+			<div :class="[highlightColor]"></div>
 			<div class="black"></div>
 			<div class="transparent"></div>	
 
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div :class="[fillColor]"></div>
+			<div :class="[shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-left', {
-  props: {},
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
   template: `
     	<div class="button-vertical-border">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div :class="[highlightColor]"></div>
+			<div :class="[fillColor]"></div>	
 		</div>
-  `
-})
-
-Vue.component('button-text', {
-	props: {},
-	template: `
-		<div class="button-text">
-			Hello World.
-		</div>
-	`
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-right', {
-  props: {},
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
   template: `
     	<div class="button-vertical-border">
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div :class="[fillColor]"></div>
+			<div :class="[shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-bottom-left', {
-  props: {},
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
   template: `
     	<div class="button-corner">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div :class="[highlightColor]"></div>
+			<div :class="[fillColor]"></div>	
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div class="shadow"></div>	
+			<div :class="[shadowColor]"></div>	
 
 			<div class="transparent"></div>
 			<div class="transparent"></div>
 			<div class="black"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-bottom', {
-  props: {},
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
   template: `
     	<div class="button-horizontal-border">
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div :class="[fillColor]"></div>
+			<div :class="[shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
-  `
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
 })
 
 Vue.component('button-bottom-right', {
-  props: {},
+   props: {
+	  color: {
+		  type: String,
+		  default: "gray"
+	  }
+   },
   template: `
     	<div class="button-corner">
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div :class="[fillColor]"></div>
+			<div :class="[shadowColor]"></div>
 			<div class="black"></div>	
 
-			<div class="shadow"></div>
+			<div :class="[shadowColor]"></div>
 			<div class="black"></div>
 			<div class="transparent"></div>	
 
@@ -153,6 +350,20 @@ Vue.component('button-bottom-right', {
 			<div class="transparent"></div>
 			<div class="transparent"></div>	
 		</div>
+  `,
+  data() {
+	  return {
+		highlightColor: `highlight-${this.color}`,
+		fillColor: `fill-${this.color}`,
+		shadowColor: `shadow-${this.color}`
+	  }
+  }
+})
+
+Vue.component('button-space-vertical', {
+  props: {},
+  template: `
+    <div class="button-space-vertical"></div>
   `
 })
 
@@ -170,27 +381,27 @@ Vue.component('border-top-left', {
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
 
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
 
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>
 
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>
-			<div class="fill"></div>	
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>
+			<div class="fill-gray"></div>	
 		</div>
   `
 })
@@ -200,8 +411,8 @@ Vue.component('border-top', {
   template: `
     	<div class="border-top">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>	
 		</div>
   `
 })
@@ -216,28 +427,28 @@ Vue.component('border-top-right', {
         <div class="transparent"></div>
         <div class="transparent"></div>
 
-        <div class="highlight"></div>
-        <div class="highlight"></div>
+        <div class="highlight-gray"></div>
+        <div class="highlight-gray"></div>
         <div class="black"></div>
         <div class="transparent"></div>
         <div class="transparent"></div>
 
-        <div class="highlight"></div>
-        <div class="highlight"></div>
-        <div class="fill"></div>
+        <div class="highlight-gray"></div>
+        <div class="highlight-gray"></div>
+        <div class="fill-gray"></div>
         <div class="black"></div>
         <div class="transparent"></div>
 
-        <div class="fill"></div>
-        <div class="fill"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="fill-gray"></div>
+        <div class="fill-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>
 
-        <div class="fill"></div>
-        <div class="fill"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="fill-gray"></div>
+        <div class="fill-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>	
     </div>
   `
@@ -248,8 +459,8 @@ Vue.component('border-left', {
   template: `
     	<div class="border-left">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>	
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>	
 		</div>
   `
 })
@@ -258,8 +469,8 @@ Vue.component('border-right', {
   props: {},
   template: `
     	<div class="border-right">
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div class="fill-gray"></div>
+			<div class="shadow-gray"></div>
 			<div class="black"></div>	
 		</div>
   `
@@ -270,28 +481,28 @@ Vue.component('border-bottom-left', {
   template: `
     <div class="border-bottom-left">
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>
-			<div class="fill"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>
+			<div class="fill-gray"></div>
 
 			<div class="black"></div>
-			<div class="highlight"></div>
-			<div class="highlight"></div>
-			<div class="fill"></div>
-			<div class="fill"></div>
+			<div class="highlight-gray"></div>
+			<div class="highlight-gray"></div>
+			<div class="fill-gray"></div>
+			<div class="fill-gray"></div>
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div class="fill"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
+			<div class="fill-gray"></div>
+			<div class="shadow-gray"></div>
+			<div class="shadow-gray"></div>
 
 			<div class="transparent"></div>
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
+			<div class="shadow-gray"></div>
+			<div class="shadow-gray"></div>
 
 			<div class="transparent"></div>
 			<div class="transparent"></div>
@@ -306,8 +517,8 @@ Vue.component('border-bottom', {
   props: {},
   template: `
     	<div class="border-bottom">
-			<div class="fill"></div>
-			<div class="shadow"></div>
+			<div class="fill-gray"></div>
+			<div class="shadow-gray"></div>
 			<div class="black"></div>	
 		</div>
   `
@@ -317,27 +528,27 @@ Vue.component('border-bottom-right', {
   props: {},
   template: `
     <div class="border-bottom-right">
-        <div class="fill"></div>
-        <div class="fill"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="fill-gray"></div>
+        <div class="fill-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>
 
-        <div class="fill"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="fill-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>
 
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>
 
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
+        <div class="shadow-gray"></div>
         <div class="black"></div>
         <div class="transparent"></div>
 
