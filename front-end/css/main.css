@@ -12,6 +12,10 @@ body, html {
   margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -127,6 +131,25 @@ body, html {
     font-size: calc(var(--scale) * 30px);
     padding: calc(var(--scale) * 15px);
     margin: auto;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+        Introduced in IE 10.
+        See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button-text-gray {
+    color: black;
+}
+
+.button-text-green {
+    color: white;
 }
 
 .button-space-vertical {

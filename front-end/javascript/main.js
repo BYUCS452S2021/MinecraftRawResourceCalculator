@@ -118,28 +118,28 @@ Vue.component('text-button', {
 	  }
   },
   template: `
-    <div class="project-list">
-		<span class="button">
-			<button-top-left :color="color"></button-top-left>
-			<button-top :color="color"></button-top>
-			<button-top-right :color="color"></button-top-right>
-			<button-left :color="color"></button-left>
-			
-			<div :class="[buttonText, fillColor]">
-				{{text}}
-			</div>
-									
-			<button-right :color="color"></button-right>
-			<button-bottom-left :color="color"></button-bottom-left>
-			<button-bottom :color="color"></button-bottom>
-			<button-bottom-right :color="color"></button-bottom-right>
-		</span>
-	</div>
+	<span class="button" @mousedown="mousePressed=true" @mouseup="mousePressed=false" @mouseleave="mousePressed=false">
+		<button-top-left :color="color" :pressed="mousePressed"></button-top-left>
+		<button-top :color="color" :pressed="mousePressed"></button-top>
+		<button-top-right :color="color" :pressed="mousePressed"></button-top-right>
+		<button-left :color="color" :pressed="mousePressed"></button-left>
+		
+		<div :class="[buttonText, buttonTextColor, fillColor]">
+			{{text}}
+		</div>
+								
+		<button-right :color="color" :pressed="mousePressed"></button-right>
+		<button-bottom-left :color="color" :pressed="mousePressed"></button-bottom-left>
+		<button-bottom :color="color" :pressed="mousePressed"></button-bottom>
+		<button-bottom-right :color="color" :pressed="mousePressed"></button-bottom-right>
+	</span>
   `,
   data() {
 	  return {
 		  buttonText: "button-text",
-		  fillColor: `fill-${this.color}`
+		  buttonTextColor: `button-text-${this.color}`,
+		  fillColor: `fill-${this.color}`,
+		  mousePressed: false
 	  }
   }
 })
@@ -149,6 +149,10 @@ Vue.component('button-top-left', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
   },
   template: `
@@ -159,10 +163,10 @@ Vue.component('button-top-left', {
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div :class="[highlightColor]"></div>	
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>	
 
 			<div class="black"></div>
-			<div :class="[highlightColor]"></div>
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>
 			<div :class="[fillColor]"></div>	
 		</div>
   `,
@@ -180,12 +184,16 @@ Vue.component('button-top', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
   },
   template: `
     	<div class="button-horizontal-border">
 			<div class="black"></div>
-			<div :class="[highlightColor]"></div>
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>
 			<div :class="[fillColor]"></div>	
 		</div>
   `,
@@ -203,6 +211,10 @@ Vue.component('button-top-right', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
    template: `
@@ -211,12 +223,12 @@ Vue.component('button-top-right', {
 			<div class="transparent"></div>
 			<div class="transparent"></div>	
 
-			<div :class="[highlightColor]"></div>
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>
 			<div class="black"></div>
 			<div class="transparent"></div>	
 
 			<div :class="[fillColor]"></div>
-			<div :class="[shadowColor]"></div>
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
   `,
@@ -234,12 +246,16 @@ Vue.component('button-left', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
   template: `
     	<div class="button-vertical-border">
 			<div class="black"></div>
-			<div :class="[highlightColor]"></div>
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>
 			<div :class="[fillColor]"></div>	
 		</div>
   `,
@@ -257,12 +273,16 @@ Vue.component('button-right', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
   template: `
     	<div class="button-vertical-border">
 			<div :class="[fillColor]"></div>
-			<div :class="[shadowColor]"></div>
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
   `,
@@ -280,17 +300,21 @@ Vue.component('button-bottom-left', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
   template: `
     	<div class="button-corner">
 			<div class="black"></div>
-			<div :class="[highlightColor]"></div>
+			<div :class="[pressed ? shadowColor : highlightColor]"></div>
 			<div :class="[fillColor]"></div>	
 
 			<div class="transparent"></div>
 			<div class="black"></div>
-			<div :class="[shadowColor]"></div>	
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>	
 
 			<div class="transparent"></div>
 			<div class="transparent"></div>
@@ -311,12 +335,16 @@ Vue.component('button-bottom', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
   template: `
     	<div class="button-horizontal-border">
 			<div :class="[fillColor]"></div>
-			<div :class="[shadowColor]"></div>
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>
 			<div class="black"></div>	
 		</div>
   `,
@@ -334,15 +362,19 @@ Vue.component('button-bottom-right', {
 	  color: {
 		  type: String,
 		  default: "gray"
+	  },
+	  pressed: {
+		  type: Boolean,
+		  default: false
 	  }
    },
   template: `
     	<div class="button-corner">
 			<div :class="[fillColor]"></div>
-			<div :class="[shadowColor]"></div>
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>
 			<div class="black"></div>	
 
-			<div :class="[shadowColor]"></div>
+			<div :class="[pressed ? highlightColor : shadowColor]"></div>
 			<div class="black"></div>
 			<div class="transparent"></div>	
 
@@ -568,3 +600,27 @@ var app = new Vue({
     data: {
     }
 })
+
+function newProject() {
+	changeView();
+}
+
+function editProject() {
+	changeView();
+}
+
+function saveProject() {
+	changeView();
+}
+
+function cancelSave() {
+	changeView();
+}
+
+function changeView() {
+	var projectView = document.getElementById("project-view");
+	var projectEditor = document.getElementById("project-editor");
+
+	projectView.classList.toggle("hidden");
+	projectEditor.classList.toggle("hidden");
+}

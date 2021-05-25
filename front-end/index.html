@@ -17,110 +17,273 @@
 
 			<img src="./assets/images/logo.png" alt="SRC Logo" id="logo-image">
 
-			<div class="main-container">
-				<div class="window">
-					<border-top-left></border-top-left>
-					<border-top></border-top>
-					<border-top-right></border-top-right>
-					<border-left></border-left>
-				
-					<div style="background: #c4c4c4;">
-						<project-info-button name="House" author="Secret_Moonshine" date="05/21/2021"></project-info-button>
-						<project-info-space></project-info-space>
-						<project-info-button name="Castle" author="RogueAnvil" date="03/11/2017"></project-info-button>
-						<project-info-space></project-info-space>
-						<project-info-button name="Krastle" author="BDoubleO100" date="09/11/2020"></project-info-button>
-						<project-info-space></project-info-space>
-						<project-info-full-space></project-info-full-space>
-
-						<div style="display: flex; float: right;">
-							<text-button text="New Project" color="green"></text-button>
-							<button-space-vertical></button-space-vertical>
-							<text-button text="Edit"></text-button>
-						</div>
-					</div>
+			<div id="project-view" class="hidden">
+				<div class="main-container">
+					<div class="window" id="project-list">
+						<border-top-left></border-top-left>
+						<border-top></border-top>
+						<border-top-right></border-top-right>
+						<border-left></border-left>
 					
-					<border-right></border-right>
-					<border-bottom-left></border-bottom-left>
-					<border-bottom></border-bottom>
-					<border-bottom-right></border-bottom-right>
-				</div>
+						<div style="background: #c4c4c4;">
+							<project-info-button name="House" author="Secret_Moonshine" date="05/21/2021"></project-info-button>
+							<project-info-space></project-info-space>
+							<project-info-button name="Castle" author="RogueAnvil" date="03/11/2017"></project-info-button>
+							<project-info-space></project-info-space>
+							<project-info-button name="Krastle" author="BDoubleO100" date="09/11/2020"></project-info-button>
+							<project-info-space></project-info-space>
+							<project-info-full-space></project-info-full-space>
 
-				<div class="window">
-					<border-top-left></border-top-left>
-					<border-top></border-top>
-					<border-top-right></border-top-right>
-					<border-left></border-left>
-
-					<div class="inventory">
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
+							<div style="display: flex; float: right;">
+								<text-button text="New Project" color="green" onclick="newProject()"></text-button>
+								<button-space-vertical></button-space-vertical>
+								<text-button text="Edit" onclick="editProject()"></text-button>
+							</div>
+						</div>
 						
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
-						<inventory-slot></inventory-slot>
+						<border-right></border-right>
+						<border-bottom-left></border-bottom-left>
+						<border-bottom></border-bottom>
+						<border-bottom-right></border-bottom-right>
 					</div>
 
-					<border-right></border-right>
-					<border-bottom-left></border-bottom-left>
-					<border-bottom></border-bottom>
-					<border-bottom-right></border-bottom-right>
+					<div class="window" id="project-components">
+						<border-top-left></border-top-left>
+						<border-top></border-top>
+						<border-top-right></border-top-right>
+						<border-left></border-left>
+
+						<div class="inventory">
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+						</div>
+
+						<border-right></border-right>
+						<border-bottom-left></border-bottom-left>
+						<border-bottom></border-bottom>
+						<border-bottom-right></border-bottom-right>
+					</div>
 				</div>
 			</div>
 
+			<div id="project-editor" class="">
+				<div class="main-container">
+					<div class="window" id="project-list">
+						<border-top-left></border-top-left>
+						<border-top></border-top>
+						<border-top-right></border-top-right>
+						<border-left></border-left>
+
+						<div style="background: #c4c4c4;">
+							<div class="inventory">
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+								<inventory-slot></inventory-slot>
+							</div>
+
+							<project-info-space></project-info-space>
+
+							<div style="display: flex; float: right;">
+								<text-button text="Save" color="green" onclick="saveProject()"></text-button>
+								<button-space-vertical></button-space-vertical>
+								<text-button text="CANCEL" onclick="cancelProject()"></text-button>
+							</div>
+						</div>
+
+						<border-right></border-right>
+						<border-bottom-left></border-bottom-left>
+						<border-bottom></border-bottom>
+						<border-bottom-right></border-bottom-right>
+					</div>
+
+					<div class="window" id="project-components">
+						<border-top-left></border-top-left>
+						<border-top></border-top>
+						<border-top-right></border-top-right>
+						<border-left></border-left>
+
+						<div class="inventory">
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+							<inventory-slot></inventory-slot>
+						</div>
+
+						<border-right></border-right>
+						<border-bottom-left></border-bottom-left>
+						<border-bottom></border-bottom>
+						<border-bottom-right></border-bottom-right>
+					</div>
+				</div>
+			</div>
 		</div>	
 	</div>
 </body>
