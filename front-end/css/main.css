@@ -18,6 +18,15 @@ body, html {
   margin: 0;
 }
 
+#logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 75%;
+}
+
 .bg-image {
     /* The image used */
     background-image: url("../assets/images/background.png");
@@ -194,7 +203,7 @@ body, html {
     padding: calc(var(--scale) * 10px);
 }
 
-.window-container {
+.main-container {
     display: flex;
     justify-content: center;
 }
