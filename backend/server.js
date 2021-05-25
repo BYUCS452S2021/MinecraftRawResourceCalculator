@@ -1,17 +1,37 @@
 // Dependencies
 const express = require("express")
 const cors = require("cors")
+const { getProject, calculateResources } = require("./http-handler/project")
+const { getProjectList } = require("./http-handler/projectlist")
+const { createProject } = require("./http-handler/createproject")
 
 // Server Configs (static variables)
 const PORT = 8080
 
-// Initialize Express App
+// Initialize and Configure Express App
 const app = express()
+app.use(express.json())
 
 // Enable CORS on the app
+function originAllowed(origin) {
+	let allowedOrigins = [/^http:\/\/127.0.0.1/, /http:\/\/localhost/]
+	for (allowed of allowedOrigins) {
+		if (allowed.test(origin)) {
+			return true
+		}
+	}
+	return false
+}
+
 app.use(
 	cors({
-		origin: ["http://127.0.0.1", "http://localhost"],
+		origin: (origin, callback) => {
+			if (originAllowed(origin)) {
+				callback(null, true)
+				return
+			}
+			callback(new Error("Invalid request origin."))
+		},
 		methods: ["GET", "POST"],
 	})
 )
@@ -37,28 +57,27 @@ app.get("/", (req, res) => {
 })
 
 app.get("/projectlist", (req, res) =>
-	res.json(responseWithMessage(true, "Hello from the projectlist endpoint!"))
+	res.json(responseWithMessage(true, getProjectList()))
 )
 
-app.post("/createproject", (req, res) =>
-	res.json(
-		responseWithMessage(true, "Hello from the createproject endpoint!")
-	)
-)
+app.post("/createproject", (req, res) => {
+	console.log(JSON.stringify(req.body))
+	res.json(responseWithMessage(true, createProject(req.body)))
+})
 
 // Create a regular /project endpoint here when we add the ability to filter
 // projects (i.e. only show the projects by a particular author or projects
 // created in the last 3 months, etc.)
 
-app.get("/project/:project", (req, res) =>
-	res.json(responseWithMessage(true, "Hello from the project endpoint!"))
-)
+app.get("/project/:project", (req, res) => {
+	console.log(req.project)
+	res.json(responseWithMessage(true, getProject(req.project)))
+})
 
-app.get("/project/:project/calculateresources", (req, res) =>
-	res.json(
-		responseWithMessage(true, "Hello from the calculateresources endpoint!")
-	)
-)
+app.get("/project/:project/calculateresources", (req, res) => {
+	console.log(req.project)
+	res.json(responseWithMessage(true, calculateResources(req.project)))
+})
 
 // Set app to listen on Selected Port
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`))
