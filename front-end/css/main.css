@@ -8,14 +8,13 @@
     height: 100vh;
 }
 
-#new-project-button {
-}
-
-#edit-button {
-}
-
 body, html {
   margin: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
 }
 
 #logo-image {
@@ -40,6 +39,8 @@ body, html {
     background-size: cover;
 }
 
+
+/* COLORS */
 .highlight-gray {
     background: #ffffff;
 }
@@ -77,6 +78,8 @@ body, html {
     opacity: 0;
 }
 
+
+/* INVENTORY */
 .inventory {
     display: grid;
     grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
@@ -93,6 +96,8 @@ body, html {
     height: calc(var(--scale) * 54px);
 }
 
+
+/* BUTTON */
 .button {
     display: grid;
     grid-template-columns: max-content max-content max-content;
@@ -128,6 +133,8 @@ body, html {
     width: calc(var(--scale) * 3px);
 }
 
+
+/* PROJECT INFO FIELDS */
 .project-info {
     display: grid;
     grid-template-columns: calc(var(--scale) * 180px) calc(var(--scale) * 150px) calc(var(--scale) * 180px);
@@ -195,17 +202,14 @@ body, html {
     height: calc(var(--scale) * 73px);
 }
 
+
+/* WINDOW */
 .window {
     display: grid;
     grid-template-columns: max-content max-content max-content;
     grid-template-rows: max-content max-content max-content;
     float: left;
     padding: calc(var(--scale) * 10px);
-}
-
-.main-container {
-    display: flex;
-    justify-content: center;
 }
 
 .border-top-left {
@@ -256,6 +260,8 @@ body, html {
     grid-template-rows: calc(var(--scale) * 9px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px) calc(var(--scale) * 3px);
 }
 
+
+/* FONTS */
 @font-face {
     font-family: minecraft-regular;
     src: url("../assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf");
